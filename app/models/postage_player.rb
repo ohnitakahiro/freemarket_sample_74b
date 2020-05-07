@@ -1,0 +1,2 @@
+class PostagePlayer < ApplicationRecord
+end

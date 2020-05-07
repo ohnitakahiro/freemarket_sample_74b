@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - .gitattributes
+    - .gitignone
+    - config.ru
+    - Gemfile
+    - Gemfile.lock
+    - db/schema.rb
+    - Rakefile
+    - README.md
