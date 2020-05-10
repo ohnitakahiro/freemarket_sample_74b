@@ -1,2 +1,31 @@
 // 色定義
-$theme-color:#3CCACE;
+$theme-color:$palette-Cyan;
+// 共通部分
+$color-header:$palette-lampBlack;
+$color-footer-background:$palette-lightBlack;
+$color-footer:$palette-trueWhite;
+$color-footer-ulli:$palette-trueWhite;
+$color-purchaseBtn:$palette-trueWhite;
+// items/index
+$color-main-background:$palette-White;
+$color-mainVisual-Content:$palette-trueWhite;
+$color-mainVisual-Text:$palette-trueWhite;
+$color-topIntroduction-number:$palette-trueWhite;
+$color-topMiddleDl-Inner:$palette-trueWhite;
+$color-topKeyFeatures-background:$palette-trueWhite;
+$color-pickupContainer-background:$palette-White;
+$color-productLists-a:$palette-trueWhite;
+$color-productLists-body-background:$palette-trueWhite;
+$color-productLists-body:$palette-lampBlack;
+// items/show
+$color-show-topContent-itemBox:$palette-trueWhite;
+$color-show-topContent-table-border:$palette-White;
+$color-show-topContent-table-th-border:$palette-lightGray;
+$color-show-topContent-table-th-background:$palette-eGray;
+$color-show-topContent-table-td-border:$palette-lightGray;
+$color-show-topContent-linkbtn:$palette-Orange;
+$color-show-topContent-optionalbtn:$palette-lampBlack;
+$color-show-commentBox-background:$palette-trueWhite;
+$color-show-commentBox-Btn:$palette-trueWhite;
+$color-show-commentBox-noticeMsg:$palette-White;
+

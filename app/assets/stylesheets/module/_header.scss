@@ -64,7 +64,7 @@
           padding: 0;
         }
         a {
-          color: #333;
+          color:$color-header;
           text-decoration: none;
           line-height: 32px;
           background-position: center right;
@@ -79,13 +79,13 @@
       display: flex;
       margin-bottom: 10px;
       &__item {
-        color: #333;
+        color:$color-header;
         line-height: 38px;
         padding: 0 0 0 16px;
         a {
           display: flex;
           align-items: center;
-          color: #333;
+          color: $color-header;
           text-decoration: none;
           line-height: 32px;
         }

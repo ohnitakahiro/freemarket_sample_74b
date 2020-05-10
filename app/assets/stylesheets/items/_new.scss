@@ -1,0 +1,141 @@
+.new-wrapper {
+  background-color: #eee;
+  &__header {
+    background-color: #eee;
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: inherit;
+      text-decoration: none;
+      img {
+        height: 49px;
+        width: 185px;
+      }
+    }
+  }
+  &__main {
+    width: 700px;
+    padding: 40px;
+    margin: 0 auto;
+    font-size: 14px;
+    margin-bottom: 2px;
+    background-color: white;
+    &__title {
+      font-weight: bold;
+      margin-bottom: 16px;
+      span {
+        padding: 0 4px;
+        margin-left: 8px;
+        color: white;
+        font-size: 12px;
+        border-radius: 2px;
+        background-color: $theme-color;
+      }
+      .any {
+        background-color: #ddd;
+      }
+    }
+    .spacing {
+      margin-top: 20px;
+    }
+    &__text {
+      margin-bottom: 16px;
+    }
+    &__image-field {
+      height: 150px;
+      background-color: #eee;
+      border: 1px dashed #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      text-align: center;
+      position: relative;
+      .fa-camera {
+        position: absolute;
+        top: 40px;
+        font-size: 20px;
+      }
+      &__text {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+    &__subtitle {
+      color: #999;
+      margin-bottom: 24px;
+      font-weight: bold;
+    }
+    &__input-text {
+      border: 1px solid #ccc;
+      height: 48px;
+      line-height: 48px;
+      font-size: 16px;
+      padding: 0 16px;
+      width: 100%;
+      border-radius: 4px;
+    }
+    &__input-textarea {
+      border: 1px solid #ccc;
+      height: 160px;
+      font-size: 16px;
+      padding: 16px;
+      width: 100%;
+      border-radius: 4px;
+    }
+    &__input-select {
+      border: 1px solid #ccc;
+      height: 48px;
+      line-height: 48px;
+      font-size: 16px;
+      padding: 0 16px;
+      width: 100%;
+      border-radius: 4px;
+    }
+    &__input-price {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &__input {
+        border: 1px solid #ccc;
+        text-align: end;
+        height: 48px;
+        line-height: 48px;
+        font-size: 16px;
+        padding: 0 16px;
+        width: 285px;
+        margin-left: 8px;
+        border-radius: 4px;
+      }
+    }
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__submit {
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto 24px;
+      width: 400px;
+      height: 44px;
+      background-color: $theme-color;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: 0px solid #000;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+      color: #0095ee;
+      text-decoration: none;
+    }
+    &__caution {
+      font-size: 12px;
+    }
+  }
+}

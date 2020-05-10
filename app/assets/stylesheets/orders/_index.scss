@@ -1,90 +1,90 @@
-// body {
-//   height: 100%;
-//   background-color: #cecdcd;
-//   .header {
-//     text-align: center;
-//     img {
-//       margin: 10px auto;
-//       width: 200px;
-//     }
-//   }
-//   .contents {
-//     height: 100%;
-//     width: 40%;
-//     background-color: #fcfcfc;
-//     margin: 0 auto;
-//     padding: 20px;
-//     text-align: center;
-//     .title {
-//       font-size: 20px;
-//       margin: 10px auto;
-//       font-weight: 700;
-//     }
-//     .product {
-//       height: 150px;
-//       width: 100%;
-//       display: flex;
-//       padding: 30px;
-//       justify-content: center;
-//       border-top: 1px solid #cecdcd;
-//       &__image {
-//         height: 100px;
-//         width: 100px;
-//       }
-//       &__details {
-//         height: 100px;
-//         text-align: left;
-//         padding-left: 10px;
-//         .product__name {
-//           height: 50px;
-//         }
-//         .casher {
-//           display: flex;
-//           .money {
-//             width: 100px;
-//           }
-//           .postage {
-//             width: 100px;
-//           }
-//         }
-//       }
-//     }
-//     ul {
-//       list-style-type: none;
-//       padding: 20px 40px;
-//       margin: 0;
-//       border-top: 1px solid #cecdcd;
-//       li {
-//         display: inline;
-//         padding: 10px;
-//       }
-//     }
-//     p {
-//       padding-right: 20px;
-//     }
-//     .shipping {
-//       padding: 10px;
-//       &__address {
-//         text-align: center;
-//       }
-//     }
-//     .buy {
-//       padding: 20px;
-//       border-top: 1px solid #cecdcd;
-//       button {
-//         width: 200px;
-//         height: 35px;
-//         background-color: #0ff8f8;
-//         border: none;
-//         font-size: 15px;
-//       }
-//     }
-//   }
-//   .footer {
-//     text-align: center;
-//     img {
-//       margin: 10px auto;
-//       width: 200px;
-//     }
-//   }
-// }
+.overall {
+  height: 100%;
+  background-color: #cecdcd;
+  .header {
+    text-align: center;
+    img {
+      margin: 10px auto;
+      width: 200px;
+    }
+  }
+  .contents {
+    height: 100%;
+    width: 40%;
+    background-color: #fcfcfc;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    .title {
+      font-size: 20px;
+      margin: 10px auto;
+      font-weight: 700;
+    }
+    .product {
+      height: 150px;
+      width: 100%;
+      display: flex;
+      padding: 30px;
+      justify-content: center;
+      border-top: 1px solid #cecdcd;
+      &__image {
+        height: 100px;
+        width: 100px;
+      }
+      &__details {
+        height: 100px;
+        text-align: left;
+        padding-left: 10px;
+        .product__name {
+          height: 50px;
+        }
+        .casher {
+          display: flex;
+          .money {
+            width: 100px;
+          }
+          .postage {
+            width: 100px;
+          }
+        }
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 20px 40px;
+      margin: 0;
+      border-top: 1px solid #cecdcd;
+      li {
+        display: inline;
+        padding: 10px;
+      }
+    }
+    p {
+      padding-right: 20px;
+    }
+    .shipping {
+      padding: 10px;
+      &__address {
+        text-align: center;
+      }
+    }
+    .buy {
+      padding: 20px;
+      border-top: 1px solid #cecdcd;
+      button {
+        width: 200px;
+        height: 35px;
+        background-color: #0ff8f8;
+        border: none;
+        font-size: 15px;
+      }
+    }
+  }
+  .footer {
+    text-align: center;
+    img {
+      margin: 10px auto;
+      width: 200px;
+    }
+  }
+}

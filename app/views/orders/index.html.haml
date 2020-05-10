@@ -1,50 +1,49 @@
-%body
-  .overall
-    .header
-      = link_to root_path do
-        = image_tag "material/logo/logo.png"
-    .contents
-      .title
-        購入内容の確認
-      .product
-        %img.product__image{alt: "product", src: "https://media.gettyimages.com/photos/one-white-surgical-mask-picture-id589335252?s=2048x2048"}/
-        .product__details
-          .product__name
-            使い捨てマスク
-          .casher
-            .money
-              ¥10,000
-            .postage
-              送料込み
+.overall
+  .header
+    = link_to root_path do
+      = image_tag "material/logo/logo.png"
+  .contents
+    .title
+      購入内容の確認
+    .product
+      %img.product__image{alt: "product", src: "https://media.gettyimages.com/photos/one-white-surgical-mask-picture-id589335252?s=2048x2048"}/
+      .product__details
+        .product__name
+          使い捨てマスク
+        .casher
+          .money
+            ¥10,000
+          .postage
+            送料込み
+    %ul
+      %li.price__title
+        支払い金額
+      %li.price__total
+        ¥10,000
+    .payment
       %ul
-        %li.price__title
-          支払い金額
-        %li.price__total
-          ¥10,000
-      .payment
-        %ul
-          %li.payment__title
-            支払い方法
-          %li
-            %a{href: "#"} 変更する
-        %p
-          クレジットカード
-          %br/
-          *******1234
-          %br/
-          有効期限00/00
-      .shipping
-        %ul
-          %li.shipping__title
-            配送先
-          %li
-            %a{href: "#"} 変更する
-        .shipping__address
-          〇〇県▲▲市
-      .buy
-        %button{name: "aaa", type: "button", value: "aaa"}
-          購入する
-    .footer
-      = link_to root_path do
-        = image_tag "material/logo/logo-white.png"
-      %p © FURIMA
+        %li.payment__title
+          支払い方法
+        %li
+          %a{href: "#"} 変更する
+      %p
+        クレジットカード
+        %br/
+        *******1234
+        %br/
+        有効期限00/00
+    .shipping
+      %ul
+        %li.shipping__title
+          配送先
+        %li
+          %a{href: "#"} 変更する
+      .shipping__address
+        〇〇県▲▲市
+    .buy
+      %button{name: "aaa", type: "button", value: "aaa"}
+        購入する
+  .footer
+    = link_to root_path do
+      = image_tag "material/logo/logo-white.png"
+    %p © FURIMA

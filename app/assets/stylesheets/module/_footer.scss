@@ -1,7 +1,7 @@
 .Footer{
   padding: 60px 0;
-  color: #fff;
-  background-color: #272727;
+  color: $color-footer;
+  background-color: $color-footer-background;
   text-align: center;
   .contents{
     max-width: 840px;
@@ -19,7 +19,7 @@
       font-weight: bold;
   }
    ul li a{
-    color: #fff;
+    color: $color-footer-ulli;
     text-decoration: none;
     font-size: 12px;
     line-height: 32px;
@@ -41,7 +41,7 @@
   width: 120px;
   font-size: 18px;
   background: $theme-color;
-  color: white;
+  color: $color-purchaseBtn;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;

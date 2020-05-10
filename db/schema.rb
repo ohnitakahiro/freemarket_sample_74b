@@ -73,27 +73,11 @@ ActiveRecord::Schema.define(version: 20200508261700) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",               limit: 65535, null: false
-    t.string   "introduction",                     null: false
-    t.integer  "category_id",                      null: false
-    t.integer  "size_id",                          null: false
-    t.integer  "brand_id"
-    t.integer  "item_condition_id",                null: false
-    t.integer  "postage_player_id",                null: false
-    t.integer  "region_id",                        null: false
-    t.integer  "preparation_day_id",               null: false
-    t.integer  "price",                            null: false
-    t.integer  "user_id",                          null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
-    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
-    t.index ["item_condition_id"], name: "index_items_on_item_condition_id", using: :btree
-    t.index ["postage_player_id"], name: "index_items_on_postage_player_id", using: :btree
-    t.index ["preparation_day_id"], name: "index_items_on_preparation_day_id", using: :btree
-    t.index ["region_id"], name: "index_items_on_region_id", using: :btree
-    t.index ["size_id"], name: "index_items_on_size_id", using: :btree
-    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
+    t.text     "name",         limit: 65535, null: false
+    t.string   "introduction",               null: false
+    t.integer  "price",                      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "oreders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -146,14 +130,6 @@ ActiveRecord::Schema.define(version: 20200508261700) do
   add_foreign_key "addresses", "users"
   add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "brands"
-  add_foreign_key "items", "categories"
-  add_foreign_key "items", "item_conditions"
-  add_foreign_key "items", "postage_players"
-  add_foreign_key "items", "preparation_days"
-  add_foreign_key "items", "regions"
-  add_foreign_key "items", "sizes"
-  add_foreign_key "items", "users"
   add_foreign_key "oreders", "items"
   add_foreign_key "oreders", "users"
 end

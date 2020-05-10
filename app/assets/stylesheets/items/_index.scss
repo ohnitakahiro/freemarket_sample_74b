@@ -1,6 +1,6 @@
 
 .main{
-  background: #f8f8f8;
+  background: $color-main-background;
   .mainVisual{
     width: 100%;
     background-image: url(material/pict/bg-mainVisual-pict_pc.jpg) ;
@@ -18,12 +18,12 @@
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         font-size: 60px;
         line-height: 1.2;
-        color: #fff;
+        color: $color-mainVisual-Content;
       }
       &__Text{
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         font-size: 18px;
-        color: #fff;
+        color: $color-mainVisual-Text;
         line-height: 1.77778;
         margin: 16px 0 0 0;
       }
@@ -100,7 +100,7 @@
             margin: 0 5px 0 0;
             padding: 10px 20px;
             background-color: $theme-color;
-            color: #fff;
+            color: $color-topIntroduction-number;
           }
         }
         &__text{
@@ -132,7 +132,7 @@
       display: flex;
       align-items: center;
     &__Inner{
-      color: #fff;
+      color: $color-topMiddleDl-Inner;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       text-align: left;
       max-width: 1040px;
@@ -167,7 +167,7 @@
   
   .topKeyFeatures {
     padding: 60px 100px;
-    background-color: #fff;
+    background-color: $color-topKeyFeatures-background;
     .head {
       font-size: 27px;
       text-align: center;
@@ -227,7 +227,7 @@
   
   .pickupContainer {
     padding: 80px 0 40px 0;
-    background-color: #f8f8f8;
+    background-color: $color-pickupContainer-background;
     height: 100%;
     .head {
       text-align: center;
@@ -241,34 +241,37 @@
         a {
           font-size: 24px;
           text-decoration: none;
-          color: #3CCACE;
+          color: $theme-color;
         }
       }
       .productLists {
         width: 780px;
         margin: 26px auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         .productList {
           width: 220px;
+          margin-bottom:20px ;
           display: inline-block;
           a {
-            background-color: #fff;
-            display: inline-block;
+            background-color: $color-productLists-a;
+            display: block;
             text-decoration: none;
             position: relative;
+            margin: 0 auto;
           }
           &--img {
-            width: 220px;
+            width: 180px;
             height: 150px;
             position: relative;
             overflow: hidden;
-            margin: 0;
+            margin: 0 auto;
             z-index: auto;
         }
           &--body {
-            background-color: white;
-            color: #333;
+            background-color:$color-productLists-body-background;
+            color: $color-productLists-body;
             padding: 16px;
             .name {
               overflow: hidden;

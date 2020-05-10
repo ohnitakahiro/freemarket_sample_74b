@@ -8,7 +8,7 @@
     margin: 0 auto;
     .topContent {
       .itemBox {
-        background-color: #fff;
+        background-color: $color-show-topContent-itemBox;
         padding: 24px 40px 40px;
         .itemBox__name {
           text-align: center;
@@ -72,7 +72,7 @@
             width: 100%;
             height: 375px;
             border-collapse: collapse;
-            border: 1px solid #f8f8f8;
+            border: 1px solid $color-show-topContent-table-border;
             tbody {
               display: table-row-group;
               vertical-align: middle;
@@ -85,21 +85,21 @@
             }
             th {
               width: 20%;
-              background-color: #eee;
+              background-color: $color-show-topContent-table-th-background;
               font-weight: 400;
               padding: 8px;
-              border: 1px solid #dedede;
+              border: 1px solid $color-show-topContent-table-th-border;
               font-size: 14px;
               text-align: center;
             }
             td {
               width: 61%;
               padding: 15px 15px;
-              border: 1px solid #dedede;
+              border: 1px solid $color-show-topContent-table-td-border;
               font-size: 14px;
               a {
                 text-decoration: none;
-                color: #3CCACE;
+                color: $theme-color;
               }
             }
           }
@@ -114,8 +114,8 @@
               margin-right: auto;
               padding: 6px 10px;
               border-radius: 40px;
-              color: #3CCACE;
-              border: 1px solid #ffb340;
+              color: $theme-color;
+              border: 1px solid $color-show-topContent-linkbtn;
             }
             li.optionalBtn {
               font-size: 14px;
@@ -123,8 +123,8 @@
                 padding: 6px 10px;
                 display: inline-block;
                 border-radius: 4px;
-                color: #333;
-                border: 1px solid #333;
+                color: $color-show-topContent-optionalbtn;
+                border: 1px solid $color-show-topContent-optionalbtn;
                 text-decoration: none;
               }
             }
@@ -133,7 +133,7 @@
       }
       .commentBox {
         padding: 24px;
-        background-color: #fff;
+        background-color: $color-show-commentBox-background;
         margin: 10px 0;
         text-align: center;
         #comment_body {
@@ -144,16 +144,16 @@
         .noticeMsg {
           padding: 8px;
           font-size: 14px;
-          background-color: #f8f8f8;
+          background-color: $color-show-commentBox-noticeMsg;
           margin: 10px 0;
           text-align: left;
         }
         .commentBtn{
           font-size: 18px;
           line-height: 48px;
-          background: #3CCACE;
-          border: 1px solid #3CCACE;
-          color: #fff;
+          background: $theme-color;
+          border: 1px solid $theme-color;
+          color: $color-show-commentBox-Btn;
           width: 60%;
           font-size: 18px;
           border-radius: 100px;
@@ -167,7 +167,7 @@
       li {
         a {
           text-decoration: none;
-          color: #3CCACE;
+          color: $theme-color;
         }
         &:last-child {
           float: right;
@@ -178,7 +178,7 @@
       a {
         display: block;
         margin: 24px 0 8px;
-        color: #3CCACE;
+        color: $theme-color;
         text-decoration: none;
         font-weight: bold;
         font-size: 22px;

@@ -1,0 +1,79 @@
+.creditcard
+  .title
+    クレジットカード情報入力
+  .information
+    .information__number
+      .information__number--title
+        カード番号
+      .information__number--required
+        必須
+    %form
+      %input{placeholder: "半角数字のみ", type: "text"}/
+    =image_tag "material/credit/creditcard-company.png"
+    .creditcard__limit
+      .creditcard__limit--title
+        有効期限
+      .creditcard__limit--required
+        必須
+    .creditcard__limit--input
+      %select.month 
+        %option{value:"1月"} 1
+        %option{value:"2月"} 2
+        %option{value:"3月"} 3
+        %option{value:"4月"} 4
+        %option{value:"5月"} 5
+        %option{value:"6月"} 6
+        %option{value:"7月"} 7
+        %option{value:"8月"} 8
+        %option{value:"9月"} 9
+        %option{value:"10月"} 10
+        %option{value:"11月"} 11
+        %option{value:"12月"} 12
+      .creditcard__limit--input-month
+        月
+      %select.day
+        %option{value:"1"} 1
+        %option{value:"2"} 2
+        %option{value:"3"} 3
+        %option{value:"4"} 4
+        %option{value:"5"} 5
+        %option{value:"6"} 6
+        %option{value:"7"} 7
+        %option{value:"8"} 8
+        %option{value:"9"} 9
+        %option{value:"10"} 10
+        %option{value:"11"} 11
+        %option{value:"12"} 12
+        %option{value:"13"} 13
+        %option{value:"14"} 14
+        %option{value:"15"} 15
+        %option{value:"16"} 16
+        %option{value:"17"} 17
+        %option{value:"18"} 18
+        %option{value:"19"} 19
+        %option{value:"20"} 20
+        %option{value:"21"} 21
+        %option{value:"22"} 22
+        %option{value:"23"} 23
+        %option{value:"24"} 24
+        %option{value:"25"} 25
+        %option{value:"26"} 26
+        %option{value:"27"} 27
+        %option{value:"28"} 28
+        %option{value:"29"} 29
+        %option{value:"30"} 30
+        %option{value:"31"} 31
+      .creditcard__limit--input-day
+        日
+    .security
+      .security__title
+        セキュリティコード
+      .security__required
+        必須
+    %form
+      %input{placeholder: "カード背面4桁もしくは3桁の番号", type: "text"}/
+    %a.card__explanation{href: "#"} カード裏面の番号とは？
+    .add
+      %button{name: "aaa", type: "button", value: "aaa"}
+        追加する
+    

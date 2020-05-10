@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'orders/index'
+  get 'creditcard/new'  #users情報を登録した後に削除
+  get 'orders/index'    #items情報を登録した後に削除
 
   root 'items#index'
 
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user
- 
+  resources :user do
+    resources :creditcard, only: [:new] do
+    end
+  end
 end
