@@ -115,7 +115,8 @@
         %a{href: "#"}
           = image_tag "material/google-play.svg", class:"image"
 
-    .purchaseBtn
-      %span.purchaseBtn__text 出品する
-      = image_tag "material/icon/icon_camera.png", class:"image"
+    = link_to new_item_path do
+      .purchaseBtn
+        %span.purchaseBtn__text 出品する
+        = image_tag "material/icon/icon_camera.png", class:"image"
 

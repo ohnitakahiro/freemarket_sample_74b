@@ -114,17 +114,13 @@ ActiveRecord::Schema.define(version: 20200508261700) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nickname",         null: false
-    t.string   "email",            null: false
-    t.string   "password",         null: false
-    t.string   "family_name",      null: false
-    t.date     "first_name",       null: false
-    t.string   "family_name_kana", null: false
-    t.date     "first_name_kana",  null: false
-    t.date     "birthday",         null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_foreign_key "addresses", "users"

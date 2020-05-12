@@ -4,12 +4,14 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def show
   end
   
   def create
+    @user = User.new(user_params)
   end
 
   def destroy
@@ -22,7 +24,10 @@ class UsersController < ApplicationController
   end
 
   private
-  def aaa
+  def user_params
+    params.require(:user).permit(:name, :email, )
   end
 
 end
+
+ 
