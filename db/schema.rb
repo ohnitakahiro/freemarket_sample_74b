@@ -10,23 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200508261700) do
+ActiveRecord::Schema.define(version: 20200512020333) do
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "card_number",      null: false
-    t.integer  "expiration_year",  null: false
-    t.integer  "expiration_month", null: false
-    t.integer  "security",         null: false
-    t.integer  "user_id",          null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
+    t.string   "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -50,17 +49,18 @@ ActiveRecord::Schema.define(version: 20200508261700) do
     t.integer  "price",                          null: false
     t.integer  "user_id",                        null: false
     t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",              default: "", null: false
-    t.string   "encrypted_password", default: "", null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "email",              null: false
+    t.string   "encrypted_password", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["email"], name: "index_users_on_email", using: :btree
   end
 
-  add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
 end
