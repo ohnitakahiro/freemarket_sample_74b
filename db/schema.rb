@@ -12,39 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20200508261700) do
 
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "post_code",    null: false
-    t.string   "prefectures",  null: false
-    t.string   "city",         null: false
-    t.string   "block",        null: false
-    t.string   "building"
-    t.integer  "phone_number"
-    t.integer  "user_id",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
-  end
-
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id_id",               null: false
-    t.integer  "item_id_id",               null: false
-    t.text     "text",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["item_id_id"], name: "index_comments_on_item_id_id", using: :btree
-    t.index ["user_id_id"], name: "index_comments_on_user_id_id", using: :btree
   end
 
   create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -66,66 +37,30 @@ ActiveRecord::Schema.define(version: 20200508261700) do
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
-  create_table "item_conditions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",         limit: 65535, null: false
-    t.string   "introduction",               null: false
-    t.integer  "price",                      null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  create_table "oreders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "item_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_oreders_on_item_id", using: :btree
-    t.index ["user_id"], name: "index_oreders_on_user_id", using: :btree
-  end
-
-  create_table "postage_players", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "postage_player", null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "preparation_days", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "preparation_day", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "region",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                           null: false
+    t.text     "introduction",     limit: 65535, null: false
+    t.string   "category",                       null: false
+    t.string   "size"
+    t.string   "brand"
+    t.string   "condition",                      null: false
+    t.string   "postage_player",                 null: false
+    t.string   "region",                         null: false
+    t.integer  "preparation_days",               null: false
+    t.integer  "price",                          null: false
+    t.integer  "user_id",                        null: false
+    t.datetime "created_at",                     null: false
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "email",              default: "", null: false
+    t.string   "encrypted_password", default: "", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
-  add_foreign_key "addresses", "users"
   add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "oreders", "items"
-  add_foreign_key "oreders", "users"
+  add_foreign_key "items", "users"
 end

@@ -1,0 +1,36 @@
+.main-page
+  .main-page__box
+    .main-page__box__mypage
+      = link_to users_show_path, class: "text-line" do
+        マイページ
+    .main-page__box__Product_listing
+      = link_to new_item_path, class: "text-line"  do
+        出品する
+    .main-page__box__credit_card
+      = link_to creditcard_new_path, class: "text-line"  do
+        クレジットカード登録/変更
+    .main-page__box__logout
+      = link_to root_path, class: "text-line"  do
+        ログアウト
+  .main-page__user
+    .main-page__user__detail
+      .main-page__user__detail__name
+        .main-page__user__detail__name__image
+          =image_tag "material/logo/favicon.ico"
+        .main-page__user__detail__name__user
+          user
+        .main-page__user__detail__name__number
+          出品数0
+      .main-page__user__detail__choice
+        .main-page__user__detail__choice__1
+          .main-page__user__detail__choice__1__text
+            お知らせ
+        .main-page__user__detail__choice__2
+          .main-page__user__detail__choice__2__text
+            やることリスト
+      .main-page__user__detail__list
+      .main-page__user__detail__list2
+      .main-page__user__detail__list3
+        .main-page__user__detail__list3__table
+          .main-page__user__detail__list3__table__text
+            一覧を見る

@@ -37,6 +37,9 @@
         background-color: #ddd;
       }
     }
+    .flexbox {
+      display: flex;
+    }
     .spacing {
       margin-top: 20px;
     }
@@ -127,7 +130,7 @@
       font-size: 16px;
       border: 0px solid #000;
     }
-    .btn {
+    .link-blue {
       display: flex;
       justify-content: center;
       margin-bottom: 32px;

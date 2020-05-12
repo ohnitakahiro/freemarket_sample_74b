@@ -23,8 +23,10 @@
       .header__Nav
         %ul.header__Nav__listsLeft
           %li.header__Nav__listsLeft__item.header__Nav__listsLeft__item--first
-            %a#catBtn{href: "#"} カテゴリー
-            .tree.displayNone
+            #catBtn
+              カテゴリー
+              .category-box
+                = render "layouts/category"
 
           %li.header__Nav__listsLeft__item
             %a#brandBtn{href: "#"} ブランド

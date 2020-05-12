@@ -1,0 +1,154 @@
+@import "color";
+.main-page {
+  height: 100vh;
+  width: 100%;
+  display:flex;
+  justify-content: space-around;
+  background-color: white;
+  &__box {
+    height: 100%;
+    width: calc(100% - 500px);
+    background-color: rgb(252, 250, 250);
+    &__mypage {
+      height: 50px;
+      width: 200px;
+      font-size: 14px;
+      background-color: #eeeeee;
+      margin-left: 200px;
+      margin-top: 50px;
+      padding: 18px;
+    }
+    &__Product_listing {
+      height: 50px;
+      width: 200px;
+      font-size: 14px;
+      background-color: white;
+      margin-left: 200px;
+      padding: 18px;
+      border-bottom: 1px solid  rgb(236, 233, 233) ;
+    }
+    &__credit_card {
+      height: 50px;
+      width: 200px;
+      font-size: 14px;
+      background-color: white;
+      margin-left: 200px;
+      padding: 18px;
+      border-bottom: 1px solid  rgb(236, 233, 233) ;
+    }
+    &__logout {
+      height: 50px;
+      width: 200px;
+      font-size: 14px;
+      background-color: white;
+      margin-left: 200px;
+      padding: 18px;
+      border-bottom: 1px solid  rgb(236, 233, 233) ;
+    }
+  }
+  &__user {
+    height: 100vh;
+    width: calc(100% - 450px);
+    background-color: rgb(252, 250, 250);
+    &__detail {
+      height: 540px;
+      width: 790px;
+      background-color: white;
+      margin-right: 200px;
+      margin-top: 50px;
+      &__name {
+        height: 180px;
+        width: 790px;
+        background-color: rgb(236, 229, 229);
+        padding-top: 45px;
+        background-image: image-url("material/logo/logo-white.png") ;
+        &__image {
+          height: 45px;
+          width:  100px;
+          background-color: transparent;
+          margin-left: 380px;
+        }
+        &__user {
+          height: 25px;
+          width: 80px;
+          background-color: transparent;
+          margin-top: 10px;
+          margin-left: 385px;
+        }
+        &__number {
+          height: 20px;
+          width:120px;
+          background-color: transparent;
+          margin-left: 375px;
+        }
+      }
+      &__choice {
+        height: 90px;
+        width:790px;
+        background-color: rgb(236, 233, 233);
+        display:flex;
+        justify-content: space-between;
+        &__1 {
+          height: 90px;
+          width: 395px;
+          background-color:  white;
+          border-top: 2px solid #3ccace;
+          display:flex;
+          justify-content: center;
+          &__text {
+            height: 20px;
+            width: 80px;
+            background-color: white;
+            margin-top: 40px;
+          }
+        }
+        &__2 {
+          height: 90px;
+          width: 395px;
+          background-color: #eeeeee;
+          display:flex;
+          justify-content: center;
+          &__text {
+            height: 20px;
+            width: 120px;
+            background-color: #eeeeee;
+            margin-top: 35px;
+          }
+        }
+      }
+      &__list {
+        height: 90px;
+        width: 790px;
+        border-bottom: 1px solid  rgb(236, 233, 233) ;
+      }
+      &__list2 {
+        height: 90px;
+        width: 790px;
+        border-bottom: 1px solid  rgb(236, 233, 233) ;
+      }
+      &__list3 {
+        height: 90px;
+        width: 790px;
+        &__table {
+          height: 58px;
+          width: 758px;
+          background-color: #eeeeee;
+          margin: auto;
+          margin-top: 16px;
+          display:flex;
+          justify-content: center;
+          &__text {
+            height: 20px;
+            width: 80px;
+            background-color: #eeeeee;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.text-line {
+  text-decoration: none;
+  color: black;
+}
