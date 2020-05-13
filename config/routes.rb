@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   devise_for :users
  
   resources :items do
+    collection do
+      # get "set_images"
+      # 編集箇所ここから
+      get "set_parents"
+      get "set_children"
+      get "set_grandchildren"
+      # 編集箇所ここまで
+    end
     resources :orders, only: [:index] do
     end
   end

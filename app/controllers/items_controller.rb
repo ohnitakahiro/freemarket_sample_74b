@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     if @item.valid?
       @item.save
     else
-      redirect_to new_items_path
+      redirect_to new_item_path
     end
   end
 
@@ -32,9 +32,21 @@ class ItemsController < ApplicationController
   def update
   end
 
+  def set_parents
+    @parents  = Category.where(ancestry: nil)
+  end
+
+  def set_children
+    @children = Category.where(ancestry: params[:parent_id])
+  end
+
+  def set_grandchildren
+    @grandchildren = Category.where(ancestry: params[:ancestry])
+  end
+
   private
   def item_params
-    params.require(:item).permit(:name, :introduction, :category, :size, :brand, :condition, :postage_player, :region, :preparation_days, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :category_id, :size, :brand, :condition, :postage_player, :region, :preparation_days, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
 end
