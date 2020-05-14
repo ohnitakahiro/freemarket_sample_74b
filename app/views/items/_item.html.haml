@@ -1,7 +1,7 @@
 .productList
   = link_to item_path(item.id) do
     .productList--img
-      = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+      = image_tag ("#{item.images.first.image}")
     .productList--body
       = item.name
       %h3.name

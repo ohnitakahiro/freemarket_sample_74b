@@ -87,7 +87,7 @@
         %h2.head ピックアップカテゴリー
         .productBox
           .productHead
-            %a{href: "#"}
+            = link_to "#" do
               %h3.title 新規投稿商品
           .productLists
             - @items[0..5].each do |item|
@@ -98,7 +98,7 @@
       %h2.head ピックアップブランド
       .productBox
         .productHead
-          %a{href: "#"}
+          = link_to "#" do
             %h3.title アーカイバ
           .productLists
             - @items[0..5].each do |item|
@@ -110,9 +110,9 @@
       %h2.appBanner__Inner__Title だれでもかんたん、人生を変えるフリマアプリ
       %p.appBanner__Inner__Text 今すぐ無料ダウンロード！
       .appBanner__Inner__Icon
-        %a{href:"#"}
+        = link_to "#" do
           = image_tag "material/app-store.svg", class:"image"
-        %a{href: "#"}
+        = link_to "#" do
           = image_tag "material/google-play.svg", class:"image"
 
     = link_to new_item_path do

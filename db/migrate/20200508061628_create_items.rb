@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :condition, null: false
       t.string :postage_player, null: false
       t.string :region, null: false
-      t.integer :preparation_days, null: false
+      t.string :preparation_days, null: false
       t.integer :price, null: false
       t.references :user, null: false, foreign_key: true
 

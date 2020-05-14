@@ -37,8 +37,21 @@
         background-color: #ddd;
       }
     }
-    .flexbox {
+    .flexbox{
       display: flex;
+      flex-wrap: wrap;
+      .file-field{
+        display: none;
+      }
+      .new-wrapper__main__preview,.new-wrapper__main__preview-first{
+        display: flex;
+        flex-wrap: wrap;
+        &__image{
+          &__img{
+            width: 124px;
+          }
+        }
+      }
     }
     .spacing {
       margin-top: 20px;
@@ -48,6 +61,7 @@
     }
     &__image-field {
       height: 150px;
+      width: 620px;
       background-color: #eee;
       border: 1px dashed #ccc;
       display: flex;

@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20200512020333) do
     t.string   "condition",                      null: false
     t.string   "postage_player",                 null: false
     t.string   "region",                         null: false
-    t.integer  "preparation_days",               null: false
+    t.string   "preparation_days",               null: false
     t.integer  "price",                          null: false
     t.integer  "user_id",                        null: false
     t.datetime "created_at",                     null: false

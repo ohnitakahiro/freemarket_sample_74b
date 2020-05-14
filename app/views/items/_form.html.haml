@@ -9,15 +9,17 @@
         %span.require 必須
       .new-wrapper__main__text
         最大10枚までアップロードできます
-      %label{class: "flexbox"}
-        .new-wrapper__main__image-field
-          %i{class: "fas fa-camera"}
-          .new-wrapper__main__image-field__text
-            ドラッグアンドドロップ
-            %br
-            またはクリックしてファイルをアップロード
-        = f.fields_for :images do |i|
-          = i.file_field :image, {class: "file-field"}
+      .flexbox
+        .new-wrapper__main__preview
+        %label{id: "image-wrapper", action: request.path}
+          .new-wrapper__main__image-field
+            %i{class: "fas fa-camera"}
+            .new-wrapper__main__image-field__text
+              ドラッグアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード
+          = f.fields_for :images do |i|
+            = i.file_field :image, {class: "file-field"}
     .new-wrapper__main
       .new-wrapper__main__title
         商品名
