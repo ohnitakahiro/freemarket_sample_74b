@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update]
-  before_action :set_images, only: [:edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_images, only: [:edit, :update, :destroy]
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     render layout: 'compact'
   end
 
@@ -27,12 +26,17 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item.update(item_params)
+    redirect_to root_path
   end
 
   def set_parents

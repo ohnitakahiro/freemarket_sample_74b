@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load',(function(){
   var loc = location.pathname;
-  if( loc == "/items/new" || loc == "/items/edit"){
+  if( loc == "/items/new" || loc.indexOf("edit") != -1){
     $.ajax({
       url: "/items/set_parents"
     }).done(function(data){
