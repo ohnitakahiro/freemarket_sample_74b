@@ -33,9 +33,11 @@
             %ul.brandsPulldown.displayNone
         %ul.header__Nav__listsRight
           %li.header__Nav__listsRight__item.header__Nav__listsRight__item--login
-            %a{href: "#"} ログイン
+            = link_to new_user_session_path do
+              ログイン
           %li.header__Nav__listsRight__item.header__Nav__listsRight__item--new
-            %a{href: "#"} 新規会員登録
+            = link_to new_user_registration_path do
+              新規会員登録
         
     = yield
 

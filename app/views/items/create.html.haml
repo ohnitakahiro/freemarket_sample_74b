@@ -1,0 +1,12 @@
+.new-wrapper
+  .new-wrapper__header
+    = link_to root_path do
+      = image_tag "material/logo/logo.png"
+  .new-wrapper__main
+    .new-wrapper__main__create
+      商品の出品が完了しました
+      %br
+      = link_to root_path,class: "link-blue" do
+        トップページに戻る
+      -# = link_to item_path(1),class: "link-blue" do
+      -#   商品詳細ページをみる

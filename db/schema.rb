@@ -12,20 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20200512020333) do
 
-  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",     null: false
-    t.string   "customer_id", null: false
-    t.string   "card_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+  end
+
+  create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -37,19 +37,19 @@ ActiveRecord::Schema.define(version: 20200512020333) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                           null: false
-    t.text     "introduction",     limit: 65535, null: false
-    t.string   "category_id",                    null: false
+    t.string   "name",                             null: false
+    t.text     "introduction",       limit: 65535, null: false
+    t.string   "category_id",                      null: false
     t.string   "size"
     t.string   "brand"
-    t.string   "condition",                      null: false
-    t.string   "postage_player",                 null: false
-    t.string   "region",                         null: false
-    t.string   "preparation_days",               null: false
-    t.integer  "price",                          null: false
-    t.integer  "user_id",                        null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "condition_id",                     null: false
+    t.string   "postage_player_id",                null: false
+    t.string   "region_id",                        null: false
+    t.string   "preparation_day_id",               null: false
+    t.integer  "price",                            null: false
+    t.integer  "user_id",                          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 

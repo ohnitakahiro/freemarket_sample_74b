@@ -1,22 +1,36 @@
 .creditcard {
-  height: 100%;
-  background-color: #cecdcd;
+  height: 850px;
+  background-color: $palette-lightGray;
   padding: 40px;
+  &__header {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: inherit;
+      text-decoration: none;
+      img {
+        height: 49px;
+        width: 185px;
+      }
+    }
+  }
   .title {
     text-align: center;
     padding: 10px;
+    margin: 20px 0;
     font-size: 20px;
     font-weight: 700;
   }
   .information {
-    height: 500px;
-    width: 40%;
-    background-color: #fcfcfc;
+    height: 650px;
+    width: 600px;
+    background-color: $palette-White;
     margin: 0 auto;
-    padding: 10px;
+    padding: 40px;
     &__number {
-      width: 200px;
-      display: flex;
+      width: 100%;
       padding-top: 20px;
       &--title {
       font-weight: 700;
@@ -30,20 +44,21 @@
         text-align: center;
         margin-left: 10px;
       }
-    }
-    input {
-      height: 50px;
-      width: 100%;
+      .number {
+        height: 50px;
+        width: 80%;
+      }
     }
     img {
-      width: 50%;
+      width: 60%;
       margin-top: 10px;
     }
     .creditcard__limit {
       width: 200px;
-      display: flex;
       margin: 10px 0;
-      padding-top: 10px;
+      margin-top: 10px;
+      padding-top: 20px;
+      width: 80%;
       &--title {
       font-weight: 700;
       line-height: 20px;
@@ -56,37 +71,27 @@
         text-align: center;
         margin-left: 10px;
       }
-    }
-    .creditcard__limit--input {
-      width: 200px;
-      display: flex;
-      margin: 10px 0;
-      .month {
-        height: 50px;
-        width: 70px;
-        font-size: 15px;
-        margin-right: 10px;
-      }
-      &-month {
-        margin-right: 10px;
-        padding: 10px;
-        line-height: 20px;
-      }
-      .day {
-        height: 50px;
-        width: 70px;
-        font-size: 15px;
-        margin-right: 10px;
-      }
-      &-day {
-        display: inline;
-        padding: 10px;
-        line-height: 20px;
+      &--select {
+        display: flex;
+        select {
+          height: 50px;
+          width: 150px;
+          margin: 10px 0;
+        }
+        .month {
+          display: inline;
+          padding: 10px;
+          line-height: 50px;
+        }
+        .year {
+          display: inline;
+          padding: 10px;
+          line-height: 50px;
+        }
       }
     }
     .security {
       width: 300px;
-      display: flex;
       margin: 10px 0;
       padding-top: 10px;
       &__title {
@@ -100,25 +105,25 @@
         line-height: 20px;
         text-align: center;
         margin-left: 10px;
+        }
+      .cvc {
+        height: 50px;
+        width: 90%;
+      }
+      a.card__explanation {
+        margin-top: 10px;
+        padding-top: 10px;
       }
     }
-    input {
+    input#token_submit {
+      width: 200px;
       height: 50px;
-      width: 100%;
-    }
-    .card__explanation {
-      padding-top: 10px;
-    }
-    .add {
+      margin: 70px 150px;
       text-align: center;
-      button {
-        width: 200px;
-        height: 35px;
-        margin-top: 50px;
-        background-color: #0ff8f8;
-        border: none;
-        font-size: 15px;
-      }
+      background-color: $theme-color;
+      border: none;
+      font-size: 15px;
+      font-weight: 700;
     }
   }
 }
