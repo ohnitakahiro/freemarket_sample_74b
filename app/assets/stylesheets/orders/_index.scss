@@ -1,6 +1,6 @@
 .overall {
-  height: 100%;
-  background-color: $color-background;
+  height: 750px;
+  background-color: $color-orders-background;
   .header {
     text-align: center;
     img {
@@ -9,8 +9,8 @@
     }
   }
   .contents {
-    height: 100%;
-    width: 40%;
+    height: 600px;
+    width: 500px;
     background-color: $color-contents-background;
     margin: 0 auto;
     padding: 20px;
@@ -26,8 +26,8 @@
       display: flex;
       padding: 30px;
       justify-content: center;
-      border-top: 1px solid $color-border;
-      &__image {
+      border-top: 1px solid $color-orders-border;
+      img {
         height: 100px;
         width: 100px;
       }
@@ -53,7 +53,7 @@
       list-style-type: none;
       padding: 20px 40px;
       margin: 0;
-      border-top: 1px solid $color-border;
+      border-top: 1px solid $color-orders-border;
       li {
         display: inline;
         padding: 10px;
@@ -70,21 +70,14 @@
     }
     .buy {
       padding: 20px;
-      border-top: 1px solid $color-border;
-      button {
-        width: 200px;
-        height: 35px;
-        background-color: $theme-color;
-        border: none;
-        font-size: 15px;
-      }
+      border-top: 1px solid $color-orders-border;
     }
-  }
-  .footer {
-    text-align: center;
-    img {
-      margin: 10px auto;
+    button {
       width: 200px;
+      height: 35px;
+      background-color: $theme-color;
+      border: none;
+      font-size: 15px;
     }
   }
 }

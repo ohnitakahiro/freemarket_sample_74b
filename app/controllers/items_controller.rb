@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :set_images, only: [:edit, :update, :destroy]
+  before_action :set_images, only: [:edit, :update]
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.new
+    @item.images.build
   end
 
   def show
@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     if @item.valid?
       @item.save
     else
-      redirect_to new_item_path
+      redirect_to new_item_path, flash: { error: @item.errors.full_messages }
     end
   end
 
@@ -31,12 +31,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
     @item.update(item_params)
-    redirect_to root_path
+    if @item.valid?
+      @item.save
+    else
+      redirect_to edit_item_path, flash: { error: @item.errors.full_messages }
+    end
   end
 
   def set_parents

@@ -269,6 +269,10 @@
             margin: 0 auto;
             z-index: auto;
         }
+        &__sold {
+          color: $palette-cherryRed;
+          text-align: center;
+        }
           &--body {
             background-color:$color-productLists-body-background;
             color: $color-productLists-body;

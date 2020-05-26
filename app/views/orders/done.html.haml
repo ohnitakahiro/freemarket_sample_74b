@@ -1,0 +1,27 @@
+.overall__done
+  .buy__content
+    %i.far.fa-clock
+      発想をお待ちください
+    %h2.buy__content--title
+      購入が完了しました
+    .product
+      .buy__content--item--inner
+        .buy__item--main
+          .buy__item--image
+            = image_tag ("#{@item.images.first.image}")
+          .product__details
+            .product__name
+              = @item.name
+              %p.casher
+                %span.money
+                  = "#{@item.price.to_s}円"
+                %span.shipping-free 
+                （税込）送料込み
+      %form.buy__form
+        .buy
+          .buy__left
+            支払金額
+          .buy__right
+            = "#{@item.price.to_s}円"
+        .top__btn
+          = link_to "トップページへ戻る", root_path

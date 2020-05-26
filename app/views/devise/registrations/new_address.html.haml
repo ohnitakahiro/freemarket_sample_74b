@@ -1,0 +1,67 @@
+.wrapper
+  .top
+    = link_to root_path do
+      = image_tag 'material/logo/logo.png', class: "top__image"
+  -# =form_for(@address, url: addresses_path, method: :post) do |f|
+  = form_for @address do |f|  
+    .main   
+      .main__box
+        %h2.main__box__top 住所登録
+        = render "devise/shared/error_messages", resource: @address
+        .main__box__bottom
+          .main__box__bottom__content
+            .main__box__bottom__content__group2
+              %label 郵便番号
+              %span 必須
+              = f.text_field :post_code, class: "main__box__bottom__content__group2__form", placeholder: "例）123-4567"
+            .main__box__bottom__content__group2
+              %label 都道府県
+              %span 必須
+              = icon("fa", "check", class: "main__box__bottom__content__group2__icon")
+              = f.select :prefectures, Address.prefectures.keys, {prompt: "--未選択--"}, {class: 'main__box__bottom__content__group2__form'}
+            .main__box__bottom__content__group2
+              %label 市区町村
+              %span 必須
+              = f.text_field :city, class: "main__box__bottom__content__group2__form", placeholder: "例）横浜市緑区"
+            .main__box__bottom__content__group2
+              %label 番地
+              %span 必須
+              = f.text_field :block, class: "main__box__bottom__content__group2__form", placeholder: "例）青山1-1-1"
+            .main__box__bottom__content__group2
+              %label 建物
+              %span.any 任意
+              = f.text_field :building, class: "main__box__bottom__content__group2__form", placeholder: "例）柳ビル103"
+            .main__box__bottom__content__group2
+              %label 電話番号
+              %span.any 任意
+              = f.text_field :phone_number, class: "main__box__bottom__content__group2__form", placeholder: "例）09012345678"     
+          .main__box__bottom__content
+            .main__box__bottom__content__group4
+              %p
+                「登録」のボタンを押すことにより、
+                =link_to "利用規約", "#", target: "_blank", class: "main__box__bottom__content__group4__text" 
+                に同意したものとみなします
+                = f.submit "登録", class:"main__box__bottom__content__btn", method: :post
+            .main__box__bottom__content__group5
+              = link_to "本人確認登録について＞", "#", target: "_blank", class: "main__box__bottom__content__group5__text"
+            .main__box__bottom__content__group6
+              %h5
+                This site is protected by reCAPTCHA and the Google 
+                = link_to "Privacy Policy", "#", class: "main__box__bottom__content__group6__text"
+                and
+                = link_to "Teams Of Servise", "#", class: "main__box__bottom__content__group6__text"
+                apply.
+    .bottom 
+      .bottom__box 
+        %ul
+          %li
+            =link_to "プライバシーポリシー", "#", class: "bottom__box__text" 
+          %li
+            =link_to "メルカリ利用規約", "#", class: "bottom__box__text"
+          %li
+            =link_to "特定商取引に関する表記", "#", class: "bottom__box__text"  
+        = link_to root_path do
+          = image_tag 'material/logo/logo-white.png', class: "bottom__box__image"
+        %h6 
+          ©︎FURIMA,inc
+            

@@ -1,1 +1,1 @@
-json.images @images
+json.array!  @images, :image

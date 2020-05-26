@@ -4,13 +4,25 @@
       = link_to root_path do
         = image_tag "material/logo/logo.png"
     .new-wrapper__main
+      .new-wrapper__main__errors-message
+        - if flash[:error].present?
+          - flash[:error].each do |e|
+            = e
       .new-wrapper__main__title
         出品画像
         %span.require 必須
       .new-wrapper__main__text
         最大10枚までアップロードできます
       .flexbox
+        - if @item.images.count != 0
         .new-wrapper__main__preview
+          - num = 0
+            - @item.images.each do |i|
+            - num += 1
+              .new-wrapper__main__preview__image{data: {index: "#{num}"}}
+                = image_tag ("#{i.image}"), class: "new-wrapper__main__preview__image__img", data: {index: "#{num}"}
+                .delete-btn{index:"#{num}"}
+                  %i{class: "far fa-times-circle"}
         %label{id: "image-wrapper", action: request.path}
           .new-wrapper__main__image-field
             %i{class: "fas fa-camera"}
@@ -19,7 +31,9 @@
               %br
               またはクリックしてファイルをアップロード
           = f.fields_for :images do |i|
-            = i.file_field :image, {class: "file-field"}
+            = i.file_field :image, {class: "file-field", name: "item[images_attributes][#{@item.images.count}][image]", id: "item_images_attributes_#{@item.images.count}_image"}
+            - if @item.persisted?
+              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
     .new-wrapper__main
       .new-wrapper__main__title
         商品名

@@ -2,6 +2,9 @@
   = link_to item_path(item.id) do
     .productList--img
       = image_tag ("#{item.images.first.image}")
+    -if item.soldout.present?
+      .productList__sold
+        SOLD OUT
     .productList--body
       = item.name
       %h3.name

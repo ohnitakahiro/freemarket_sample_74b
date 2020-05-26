@@ -1,8 +1,9 @@
+
 .main-page
   .main-page__box
     .main-page__box__mypage
-      = link_to users_show_path, class: "text-line" do
-        マイページ
+      = link_to root_path, class: "text-line" do
+        トップページ
     .main-page__box__Product_listing
       = link_to new_item_path, class: "text-line"  do
         出品する
@@ -10,8 +11,10 @@
       = link_to new_creditcard_path, class: "text-line"  do
         クレジットカード登録/変更
     .main-page__box__logout
-      = link_to root_path, class: "text-line"  do
-        ログアウト
+      = link_to addresses_show_path, class: "text-line" do
+        住所確認
+    .main-page__box__logout
+      = link_to "ログアウト", destroy_user_session_path, metheod: :delete,class: "text-line"
   .main-page__user
     .main-page__user__detail
       .main-page__user__detail__name

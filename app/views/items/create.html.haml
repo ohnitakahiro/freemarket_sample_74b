@@ -1,12 +1,14 @@
-.new-wrapper
-  .new-wrapper__header
+.create-wrapper
+  .create-wrapper__header
     = link_to root_path do
       = image_tag "material/logo/logo.png"
-  .new-wrapper__main
-    .new-wrapper__main__create
-      商品の出品が完了しました
+  .create-wrapper__main
+    .create-wrapper__main__create
+      %p 商品の出品が完了しました！
       %br
-      = link_to root_path,class: "link-blue" do
-        トップページに戻る
-      -# = link_to item_path(1),class: "link-blue" do
-      -#   商品詳細ページをみる
+      = link_to new_item_path, class: "link-btn" do
+        続けて出品する
+      = link_to item_path(@item.id), class: "link-btn" do
+        出品した商品をみる
+      = link_to root_path, class: "link-btn" do
+        ホームへ

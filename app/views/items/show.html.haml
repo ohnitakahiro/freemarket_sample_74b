@@ -75,18 +75,21 @@
                 %i.fa.fa-star
                 お気に入り 0
             %ul.optional
-              - if current_user.id =! @item.user_id
-                %li.optionalBtn
-                  = link_to "#" do
-                    %i.fa.fa-flag
-                    不適切な商品の通報
+              - if @item.soldout == false
+                - if user_signed_in? && current_user.id == @item.user_id
+                  %li.editlBtn
+                    = link_to edit_item_path(@item.id) do
+                      編集
+                  %li.deletelBtn
+                    = link_to item_path, method: "delete" do
+                      削除
+                - else
+                  %li.optionalBtn
+                    = link_to item_orders_path(@item.id) do
+                      購入
               - else
-                %li.editlBtn
-                  = link_to edit_item_path(@item.id) do
-                    編集
-                %li.deletelBtn
-                  = link_to item_path, method: "delete" do
-                    削除
+                .sold
+                  SOLD OUT
         .commentBox
           %ul.commentContents
           %form#new_comment.new_comment{"accept-charset" => "UTF-8", :action => "#", :method => "post"}

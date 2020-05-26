@@ -1,0 +1,30 @@
+.main-page
+  .main-page__box
+    .main-page__box__mypage
+      = link_to root_path, class: "text-line" do
+        トップページ
+    .main-page__box__Product_listing
+      = link_to new_item_path, class: "text-line"  do
+        出品する
+    .main-page__box__credit_card
+      = link_to new_creditcard_path, class: "text-line"  do
+        クレジットカード登録/変更
+    .main-page__box__logout
+      = link_to addresses_show_path, class: "text-line" do
+        住所確認
+    .main-page__box__logout
+      = link_to "ログアウト", destroy_user_session_path, metheod: :delete,class: "text-line"
+  .main-page__user
+    %ul
+      %li【郵便番号】
+      = @address.post_code
+      %li【都道府県】
+      = @address.prefectures
+      %li【市町村】
+      =@address.city
+      %li【番地】
+      = @address.block
+      %li【建物名】
+      = @address.building
+      %li【電話番号】
+      = @address.phone_number

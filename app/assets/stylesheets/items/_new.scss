@@ -39,14 +39,16 @@
     }
     .flexbox{
       display: flex;
-      flex-wrap: wrap;
+      overflow-x: auto;
       .file-field{
         display: none;
       }
-      .new-wrapper__main__preview,.new-wrapper__main__preview-first{
+      .new-wrapper__main__preview,.new-wrapper__main__preview-first,.new-wrapper__main__preview{
         display: flex;
-        flex-wrap: wrap;
         &__image{
+          .delete-btn{
+            margin-bottom: 20px;
+          }
           &__img{
             width: 124px;
           }
@@ -153,11 +155,6 @@
     &__caution {
       margin-top: 32px;
       font-size: 12px;
-    }
-    &__create{
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
     }
   }
 }
