@@ -11,12 +11,9 @@
               %li
                 = image_tag("#{@item.images.first.image}")
                 %ul
-                  %li
-                    = image_tag("#{@item.images.first.image}")
-                  %li
-                    = image_tag("#{@item.images.first.image}")
-                  %li
-                    = image_tag("#{@item.images.first.image}")
+                  - @item.images[1..-1].each do |i|
+                    %li
+                      = image_tag("#{i.image}")
           .itemBox__price
             %span
               = "#{@item.price}円"
@@ -33,7 +30,7 @@
                 %tr
                   %th 出品者
                   %td 
-                    = @item.user_id
+                    = @item.user.nickname
                 %tr
                   %th カテゴリー
                   %td

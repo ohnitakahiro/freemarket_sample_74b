@@ -53,7 +53,6 @@ $(document).on('turbolinks:load',(function(){
         buildImage(blob);
       })
     }
-
     // 編集機能
     if( loc.indexOf("edit") != -1){
       //  .new-wrapper__main__previewの子要素の数を取得する
@@ -74,7 +73,6 @@ $(document).on('turbolinks:load',(function(){
       lastIndex = $('.new-wrapper__main__preview__image__img:last').data('index');
       index.splice(0, lastIndex - 1);
       $('.hidden-destroy').hide();
-
       // 追加機能
       var buildImage = function(url){
         if(index.length != 0){
@@ -99,8 +97,6 @@ $(document).on('turbolinks:load',(function(){
           }
         }
       }
-
-
       // 削除機能
       $(".flexbox").on("click", ".delete-btn", function(){
         const targetIndex = $(this).parent().data('index')
@@ -128,13 +124,11 @@ $(document).on('turbolinks:load',(function(){
         $(`#item_images_attributes_${targetIndex}_image`).remove();
         $(".flexbox").append(`<input class="file-field" type="file" name="item[images_attributes][${targetIndex}][image]" id="item_images_attributes_${targetIndex}_image">`);
       })
-   
       // プレビューを表示する
       $(".flexbox").on("change", function(e){
         var blob = window.URL.createObjectURL(e.target.files[0]);
         buildImage(blob);
       })
-
     }
   })
 }))
