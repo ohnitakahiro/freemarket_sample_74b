@@ -14,9 +14,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :postage_player
   belongs_to_active_hash :preparation_day
+  
   # バリデーション
-  validates :name, :introduction, :category_id, :condition_id, :postage_player_id, :region_id, :preparation_day_id, :price, presence: true
-  validates :price, numericality: { only_integer: true , greater_than: 299, less_than: 9999999 }
   validates_associated :images
   validates :images, presence: true
+  validates :name, :introduction, :condition_id, :postage_player_id, :region_id, :preparation_day_id, :price, presence: true
+  validates :price, numericality: { only_integer: true , greater_than: 299, less_than: 9999999 }
 end

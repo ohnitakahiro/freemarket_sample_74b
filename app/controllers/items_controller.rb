@@ -12,10 +12,6 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
-  def show
-    render layout: 'compact'
-  end
-
   def create
     @item = Item.new(item_params)
     if @item.valid?
@@ -25,9 +21,8 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destroy
-    @item.destroy
-    redirect_to root_path
+  def show
+    render layout: 'compact'
   end
 
   def edit
@@ -40,6 +35,11 @@ class ItemsController < ApplicationController
     else
       redirect_to edit_item_path, flash: { error: @item.errors.full_messages }
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   def set_parents

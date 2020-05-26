@@ -12,6 +12,17 @@ FactoryBot.define do
     end
   end
 
+  factory :item_no_picture ,class: Item do
+    name              {"test"}
+    introduction      {"test"}
+    condition_id      {"1"}
+    postage_player_id {"2"}
+    region_id         {"2"}
+    preparation_day_id {"1"}
+    price             {"500"}
+  end
+
+
   factory :category do
     name              {"aaa"}
   end
