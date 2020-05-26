@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20200518122346) do
     t.string   "block",        null: false
     t.string   "building"
     t.string   "phone_number"
-    t.integer  "user_id",      null: false
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20200518122346) do
     t.string   "first_name",                       null: false
     t.string   "family_name_kana",                 null: false
     t.string   "first_name_kana",                  null: false
-    t.date     "birthday"
+    t.date     "birthday",                         null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.datetime "remember_created_at"

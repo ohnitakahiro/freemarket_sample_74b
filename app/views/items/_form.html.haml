@@ -14,8 +14,8 @@
       .new-wrapper__main__text
         最大10枚までアップロードできます
       .flexbox
-        - if @item.images.count != 0
         .new-wrapper__main__preview
+          - if @item.images.count != 0
           - num = 0
             - @item.images.each do |i|
             - num += 1

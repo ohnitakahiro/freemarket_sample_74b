@@ -14,18 +14,14 @@ $(document).on('turbolinks:load',(function(){
         if($(this).parent().parent().attr("class") == "new-wrapper__main__preview-first"){
           $(".new-wrapper__main__preview .new-wrapper__main__preview__image:first").appendTo(".new-wrapper__main__preview-first");
         }
-        if(index.length > 5){
-          $(".new-wrapper__main__image-field").css("width",(index.length-5)*124);
-        }else if(index.length == 5){
-          $("#image-field-second").remove();
-          $(".new-wrapper__main__preview").remove();
-          $(".new-wrapper__main__preview-first").attr("class", "new-wrapper__main__preview");
-          $(".new-wrapper__main__image-field").css("display","flex");
-        }else if(index.length == 0){
+        if(index.length == 0){
           $("#image-field-second").css("display","flex");
           $("#image-field-second").css("width",index.length*124);
+        }else if(index.length > 5){
+          $(".new-wrapper__main__image-field").css("width",(index.length-5)*124);
         }else{
-          $("#image-field-second").css("width",index.length*124);
+          $(".new-wrapper__main__image-field").css("display","flex");
+          $("new-wrapper__main__image-field").css("width",124);
         }
         $("#image-wrapper").attr("for",`item_images_attributes_${targetIndex}_image`);
         $(this).parent().remove();
@@ -42,28 +38,13 @@ $(document).on('turbolinks:load',(function(){
           $(".flexbox").append(`<input class="file-field" type="file" name="item[images_attributes][${index[1]}][image]" id="item_images_attributes_${index[1]}_image">`);
           $("#image-wrapper").attr("for",`item_images_attributes_${index[1]}_image`);
           index.shift();
-          if(index.length > 5){
-            $("#image-field-second").remove();
-            $(".new-wrapper__main__image-field").css("display","flex");
-            $(".new-wrapper__main__image-field").css("width",(index.length-5)*124);
-          }else if(index.length == 5){
+          if(index.length == 0){
             $(".new-wrapper__main__image-field").css("display","none");
-            $("#image-wrapper").append(`
-              <div class="new-wrapper__main__image-field" id="image-field-second">
-                <i class="fas fa-camera"></i>
-                <div class="new-wrapper__main__image-field__text">
-                  ドラッグアンドドロップ
-                  <br>
-                  またはクリックしてファイルをアップロード
-                </div>
-              </div>
-            `);
-            $(".new-wrapper__main__preview").attr("class", "new-wrapper__main__preview-first");
-            $(".new-wrapper__main__preview-first").after(`<div class="new-wrapper__main__preview"></div>`);
-          }else if(index.length == 0){
-            $("#image-field-second").css("display","none");
+          }else if(index.length <= 5){
+            $(".new-wrapper__main__image-field").css("width",124);
+          }else if(index.length > 5){
+            $(".new-wrapper__main__image-field").css("width",(index.length-5)*124);
           }
-          $("#image-field-second").css("width",index.length*124);
         }
       }
       // プレビューを表示する
