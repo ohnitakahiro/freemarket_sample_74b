@@ -3,11 +3,8 @@
     .new-wrapper__header
       = link_to root_path do
         = image_tag "material/logo/logo.png"
+    = render 'layouts/error_messages'
     .new-wrapper__main
-      .new-wrapper__main__errors-message
-        - if flash[:error].present?
-          - flash[:error].each do |e|
-            = e
       .new-wrapper__main__title
         出品画像
         %span.require 必須

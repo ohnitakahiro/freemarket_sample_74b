@@ -4,7 +4,7 @@ class Address < ApplicationRecord
   validates :prefectures,     presence: true
   validates :city,            presence: true
   validates :block,           presence: true
-  validates :phone_number,    numericality: { only_integer: true }
+  validates :phone_number,    numericality: { only_integer: true }, allow_blank: true
 
   enum prefectures:{
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
