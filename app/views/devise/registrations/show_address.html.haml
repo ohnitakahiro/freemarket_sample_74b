@@ -16,6 +16,10 @@
       = link_to "ログアウト", destroy_user_session_path, metheod: :delete,class: "text-line"
   .main-page__user
     %ul
+      %li【送付先氏名】
+      = @address.destination_family_name
+      %li【送付先氏名カナ】
+      = @address.destination_family_name_kana
       %li【郵便番号】
       = @address.post_code
       %li【都道府県】
