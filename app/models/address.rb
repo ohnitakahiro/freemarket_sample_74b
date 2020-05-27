@@ -1,10 +1,15 @@
 class Address < ApplicationRecord
   belongs_to :user, optional: true
-  validates :post_code,       presence: true, numericality: { only_integer: true }, length: { is: 7 }
-  validates :prefectures,     presence: true
-  validates :city,            presence: true
-  validates :block,           presence: true
-  validates :phone_number,    numericality: { only_integer: true }, allow_blank: true
+
+  validates :destination_family_name,      presence: true
+  validates :destination_first_name,       presence: true
+  validates :destination_family_name_kana, presence: true
+  validates :destination_first_name_kana,  presence: true
+  validates :post_code,                    presence: true, numericality: { only_integer: true }, length: { is: 7 }
+  validates :prefectures,                  presence: true
+  validates :city,                         presence: true
+  validates :block,                        presence: true
+  validates :phone_number,                 numericality: { only_integer: true }, allow_blank: true
 
   enum prefectures:{
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
@@ -17,4 +22,5 @@ class Address < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46, 
     沖縄県:47
   }
+
 end

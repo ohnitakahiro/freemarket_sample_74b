@@ -11,6 +11,16 @@
         .main__box__bottom
           .main__box__bottom__content
             .main__box__bottom__content__group2
+              %label 送付先氏名
+              %span 必須
+              = f.text_field :destination_family_name, class: "main__box__bottom__content__group2__form", placeholder: "例）山田"
+              = f.text_field :destination_first_name, class: "main__box__bottom__content__group2__form", placeholder: "例）彩"
+            .main__box__bottom__content__group2
+              %label 送付先氏名カナ
+              %span 必須
+              = f.text_field :destination_family_name_kana, class: "main__box__bottom__content__group2__form", placeholder: "例）ヤマダ"
+              = f.text_field :destination_first_name_kana, class: "main__box__bottom__content__group2__form", placeholder: "例）アヤ"
+            .main__box__bottom__content__group2
               %label 郵便番号
               %span 必須
               = f.text_field :post_code, class: "main__box__bottom__content__group2__form", placeholder: "例）123-4567"

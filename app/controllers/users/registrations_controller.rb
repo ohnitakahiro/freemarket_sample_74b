@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
   def address_params
-    params.require(:address).permit(:post_code, :prefectures, :city, :block, :building, :phone_number)  
+    params.require(:address).permit(:destination_family_name, :destination_first_name, :destination_family_name_kana, :destination_first_name_kana, :post_code, :prefectures, :city, :block, :building, :phone_number)  
   end 
 
   # GET /resource/edit
