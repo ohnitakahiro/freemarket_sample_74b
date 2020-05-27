@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
 #バリデーション
   validates :nickname,           presence: true
-  validates :encrypted_password, presence: true, length: {minimum: 7 }
+  validates :encrypted_password, presence: true, length: {minimum: 7 }, confirmation: true
   validates :family_name,        presence: true
   validates :first_name,         presence: true
   validates :family_name_kana,   presence: true
