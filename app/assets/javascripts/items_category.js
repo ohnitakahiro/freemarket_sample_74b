@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load',(function(){
   var loc = location.pathname;
-  if( loc == "/items/new" || loc.indexOf("edit") != -1){
+  if( loc == "/items/new"){
     $.ajax({
       url: "/items/set_parents"
     }).done(function(data){
@@ -53,6 +53,54 @@ $(document).on('turbolinks:load',(function(){
           })
         }
       })
+    })
+  }
+
+  if(loc.indexOf("edit") != -1){
+      $(".select-parent").on("change", function(){
+      $(".select-child").remove();
+      $(".select-grandchild").remove();
+      if($(this).val() == ""){
+        $(".select-parent").attr("id"  , "select-parent");
+        $(".select-parent").attr("name", "item[category_id]");
+        $(".select-parent").css("margin-bottom", "0");
+      }else{
+        $.ajax({
+          url     : "/items/set_children",
+          data    : {parent_id: $(this).val()},
+          dataType: "json"
+        }).done(function(data){
+          $(".select-parent").attr("id"  , "parent_category");
+          $(".select-parent").attr("name", "select-parent");
+          $(".select-parent").css("margin-bottom", "10px");
+          $("#category-select").append(`<select class="new-wrapper__main__input-select select-child" name="item[category_id]" id="item_category_id"><option value="">選択してください</option></select>`);
+          data.children.forEach(function(child){
+            $(".select-child").append(`<option value="${child.id}">${child.name}</option>`);
+          })
+        })
+      }
+    })
+    $("#category-select").on("change", ".select-child", function(){
+      $(".select-grandchild").remove();
+      if($(this).val() == ""){
+        $(".select-child").attr("id"  , "item_category_id");
+        $(".select-child").attr("name", "item[category_id]");
+        $(".select-child").css("margin-bottom", "0");
+      }else{
+        $.ajax({
+          url     : "/items/set_grandchildren",
+          data    : {ancestry: `${$(".select-parent").val()}/${$(this).val()}`},
+          dataType: "json"
+        }).done(function(data){
+          $(".select-child").attr("id"  , "select-parent");
+          $(".select-child").attr("name", "select-parent");
+          $(".select-child").css("margin-bottom", "10px");
+          $("#category-select").append(`<select class="new-wrapper__main__input-select select-grandchild" name="item[category_id]" id="item_category_id"><option value="">選択してください</option></select>`);
+          data.grandchildren.forEach(function(grandchild){
+            $(".select-grandchild").append(`<option value="${grandchild.id}">${grandchild.name}</option>`);
+          })
+        })
+      }
     })
   }
 }))

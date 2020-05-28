@@ -47,6 +47,15 @@
         カテゴリー
         %span.require 必須
       #category-select
+        -if @item.category.present?
+          .category-wrapper-select__box
+            = f.select :category_id, @category_parent_array, {selected: @item.category.parent.parent.id}, { class: 'new-wrapper__main__input-select select-parent', id: 'parent_category'}
+          .category-wrapper-select#children_wrapper
+            .category-wrapper-select__box
+              = f.select :category_id, @category_children_array, {selected: @item.category.parent.id}, {class: 'new-wrapper__main__input-select select-child', id: 'child_category'}
+          .category-wrapper-select#grandchildren_wrapper
+            .category-wrapper-select__box
+              = f.select :category_id, @category_grandchildren_array, {selected: @item.category.parent.id}, {class: 'new-wrapper__main__input-select select-grandchild', id: 'grandchild_category'}
       .new-wrapper__main__title.spacing
         ブランド
         %span.any 任意
